@@ -141,4 +141,14 @@ docker run -d -p 8083:8080 ^
   --network app-network ^
   -e SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/order_db?createDatabaseIfNotExist=true ^
   vamshivoore/spring-order-service:latest
+
+  docker run -d -p 8085:8000 ^
+  --name springboot-crud-k8s ^
+  --network app-network ^
+  -e DB_HOST=mysql-db ^
+  -e DB_PORT=3306 ^
+  -e DB_NAME=vmc_order ^
+  -e DB_USERNAME=root ^
+  -e DB_PASSWORD=root ^
+  vamshivoore/springboot-crud-k8s:latest
 ```
